@@ -6,13 +6,13 @@
       <button
         (click)="add()"
         type="button"
-        class="btn btn-outline-success"
+        class="btn btn-success"
         data-bs-toggle="modal"
         data-bs-target="#Modal"
       >
         Add student</button
-      >&nbsp;
-      <button class="btn btn-outline-warning">LogOut</button>
+      >&nbsp;&nbsp;
+      <button class="btn btn-warning">LogOut</button>
     </div>
   </div>
 </nav>
@@ -23,7 +23,7 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Name</th>
+        <th scope="col">Full Name</th>
         <th scope="col">Email</th>
         <th scope="col">Mobile</th>
         <th scope="col">City</th>
@@ -31,23 +31,25 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="text-center">1</td>
-        <td class="text-center">DION De Yves</td>
-        <td>deyvesdion@gmail.com</td>
-        <td>0695947873</td>
-        <td>Paris</td>
+      <tr *ngFor="let data of allstudentdata">
+        <td>{{ data.id }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.mobile }}</td>
+        <td>{{ data.city }}</td>
         <td>
           <button
-            (click)="update()"
+            (click)="edit(data)"
             type="button"
-            class="btn btn-outline-primary"
+            class="btn btn-primary"
             data-bs-toggle="modal"
             data-bs-target="#Modal"
           >
             Edit</button
           >&nbsp;
-          <button class="btn btn-outline-danger">Delete</button>
+          <button (click)="deletestud(data)" class="btn btn-danger">
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>
@@ -76,24 +78,78 @@
         </div>
         <!-- Modal-body -->
         <div class="modal-body">
-          <form>
+          <form [formGroup]="formValue">
             <div class="mb-3">
-              <label for="inputName" class="form-label">Student name</label>
-              <input type="name" class="form-control" id="inputName" />
+              <label for="inputName" class="form-label"
+                >Student Full Name</label
+              >
+              <input
+                formControlName="name"
+                type="name"
+                class="form-control"
+                id="inputName"
+              />
+              <small
+                *ngIf="
+                  formValue.get('name')?.invalid &&
+                  formValue.get('name')?.touched
+                "
+                class="text-danger"
+                >Student name is required</small
+              >
             </div>
             <div class="mb-3">
-              <label for="inputEmail" class="form-label">Student email</label>
-              <input type="email" class="form-control" id="inputEmail" />
+              <label for="inputEmail" class="form-label">Student Email</label>
+              <input
+                formControlName="email"
+                type="email"
+                class="form-control"
+                id="inputEmail"
+              />
+              <small
+                *ngIf="
+                  formValue.get('email')?.invalid &&
+                  formValue.get('email')?.touched
+                "
+                class="text-danger"
+                >Student email is required</small
+              >
             </div>
             <div class="mb-3">
               <label for="inputPhoneNumber" class="form-label"
-                >Student phone number</label
+                >Student Mobile Number</label
               >
-              <input type="number" class="form-control" id="inputPhoneNumber" />
+              <input
+                formControlName="mobile"
+                type="number"
+                class="form-control"
+                id="inputPhoneNumber"
+              />
+              <small
+                *ngIf="
+                  formValue.get('mobile')?.invalid &&
+                  formValue.get('mobile')?.touched
+                "
+                class="text-danger"
+                >Student mobile number is required</small
+              >
             </div>
             <div class="mb-3">
-              <label for="inputCity" class="form-label">Student city</label>
-              <input type="text" class="form-control" id="inputCity" />
+              <label for="inputCity" class="form-label">Student City</label>
+              <input
+                formControlName="city"
+                type="text"
+                class="form-control"
+                id="inputCity"
+              />
+              <small
+                *ngIf="
+                  formValue.get('city')?.invalid &&
+                  formValue.get('city')?.touched
+                "
+                class="text-danger"
+                >Student city is required</small
+              >
             </div>
           </form>
         </div>
@@ -101,10 +157,20 @@
           <button type="button" class="btn btn-warning" data-bs-dismiss="modal">
             Close
           </button>
-          <button *ngIf="showAdd" type="button" class="btn btn-success">
-            Add new student
+          <button
+            *ngIf="showAdd"
+            (click)="addstudent()"
+            type="button"
+            class="btn btn-success"
+          >
+            Add student
           </button>
-          <button *ngIf="showUpdate" type="button" class="btn btn-success">
+          <button
+            *ngIf="showUpdate"
+            (click)="update()"
+            type="button"
+            class="btn btn-success"
+          >
             Update student
           </button>
         </div>

@@ -2,8 +2,24 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "Marie Landfriel",
+      "email": "marie.landfriel@gmail.com",
+      "mobile": "0687726721",
+      "city": "Essart Les Roi"
+    },
+    {
+      "id": 2,
+      "name": "De Yves DION",
+      "email": "deyvesdion@gmail.com",
+      "mobile": "0695947873",
+      "city": "Paris"
+    },
+    {
+      "id": 3,
+      "name": "Bellay Patricia",
+      "email": "b.patricia@gmail.com",
+      "mobile": "0677445566",
+      "city": "Maison Alfort"
     }
   ],
   "comments": [
