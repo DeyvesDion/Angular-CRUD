@@ -1,5 +1,6 @@
 {
-  "posts": [{
+  "posts": [
+    {
       "id": 1,
       "name": "Marie Landfriel",
       "email": "marie.landfriel@gmail.com",
@@ -21,14 +22,13 @@
       "city": "Abidjan"
     }
   ],
-  "signup": [{
-
-  }],
-  "comments": [{
-    "id": 1,
-    "body": "some comment",
-    "postId": 1
-  }],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
   "profile": {
     "name": "typicode"
   }

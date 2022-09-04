@@ -1,0 +1,21 @@
+.card {
+  width: 390px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  box-sizing: border-box;
+  padding: 20px 40px;
+  color: #fff;
+  border: 1px solid #000;
+  background-color: rgb(0, 0, 0);
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+form {
+  margin-bottom: 10px;
+}

@@ -12,7 +12,7 @@
       >
         Add student</button
       >&nbsp;&nbsp;
-      <button class="btn btn-warning">LogOut</button>
+      <button routerLink="/login" class="btn btn-warning">LogOut</button>
     </div>
   </div>
 </nav>
@@ -160,6 +160,7 @@
           <button
             *ngIf="showAdd"
             (click)="addstudent()"
+            [disabled]="formValue.invalid"
             type="button"
             class="btn btn-success"
           >
@@ -168,6 +169,7 @@
           <button
             *ngIf="showUpdate"
             (click)="update()"
+            [disabled]="formValue.invalid"
             type="button"
             class="btn btn-success"
           >
