@@ -1,5 +1,6 @@
 {
-  "posts": [{
+  "posts": [
+    {
       "id": 1,
       "name": "Marie Landfriel",
       "email": "marie.landfriel@gmail.com",
@@ -21,14 +22,39 @@
       "city": "Abidjan"
     }
   ],
-  "signup": [{
-
-  }],
-  "comments": [{
-    "id": 1,
-    "body": "some comment",
-    "postId": 1
-  }],
+  "signup": [
+    {
+      "id": ""
+    },
+    {
+      "name": "SSS",
+      "mobile": 122222,
+      "email": "S@j.com",
+      "password": "123",
+      "id": "p_xMc4K"
+    },
+    {
+      "name": "BELLAY Patricia",
+      "mobile": 967662543,
+      "email": "b.patricia@gmail.com",
+      "password": "123",
+      "id": "qVzWz9C"
+    },
+    {
+      "name": "De Yves",
+      "mobile": 123,
+      "email": "deyvesdion@gmail.com",
+      "password": "123",
+      "id": "LcuGRn6"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
   "profile": {
     "name": "typicode"
   }
